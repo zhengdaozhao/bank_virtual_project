@@ -1,0 +1,62 @@
+# 指定项目端口号
+server:
+  port: 9100
+
+spring:
+  application:
+    name: lmj-login-service
+
+  datasource:
+    username: root
+    # need change
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 2024/6/4 toczpd today when re-run this application, we get an error!
+    # by searching for help on internet, i add the bellow setting to mysql connection url.
+    # [?allowPublicKeyRetrieval=true]
+    url: jdbc:mysql://localhost:3306/banklmj?allowPublicKeyRetrieval=true&useSSL=false&useUnicode=true&characterEncoding=utf8&&serverTimezone=UTC
+    
+  jpa:
+    # database: MYSQL
+    # database-platform: org.hibernate.dialect.MySQL5Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        # dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      generate-ddl: true # 需要加上这个才能自动生成数据库表
+      ddl-auto: update
+# App Properties
+# bezkoder.app.jwtSecret= ======================BezKoder=Spring===========================
+# bezkoder.app.jwtExpirationMs=86400000      
+# zz:
+#   app:
+#     jwtSecret: ======================zz=Spring===========================
+#     jwtExpirationMs: 300000
+springfox:
+  documentation:
+    open-api:
+      v3:
+        path: /v3/api-docs    
+# springdoc:
+#   api-docs:
+#     #是否开启文档功能
+#     enabled: true
+#     #swagger后端请求地址
+#     path: /api-docs
+# 2024/6/4 toczpd the bellow setting is totally effectless
+  # swagger-ui:
+    #自定义swagger前端请求路径，输入http：127.0.0.1:9100/test会自动重定向到swagger页面
+    # path: /swagger-ui.html
+
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://localhost:8761/eureka/
+# management.endpoints.web.exposure.include
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

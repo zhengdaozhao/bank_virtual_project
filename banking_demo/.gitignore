@@ -1,0 +1,6 @@
+temp_bak0408/
+kafka_20240428/
+node_modules/
+*.class
+test/
+target/

@@ -1,0 +1,29 @@
+.div {
+  /* max-width: 500px;
+  height: 500px; */
+  margin: 0rem 15rem 0rem;
+  /* padding: 0rem 15rem; */
+  /* background-color: #4971a2; */
+  background: linear-gradient(to right, blue, pink);
+  /* background-image: url(https://tse1-mm.cn.bing.net/th/id/OIP-C.ZstvLrIZxHyrWEbb8dsEsQHaFj?w=210&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7); */
+  /* display: flex; */
+  background-size: cover;
+
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  gap: 1rem;
+}
+
+.list a {
+  text-decoration: none;
+  color: var(--color-primary-400);
+}
+
+.list a:hover,
+.list a.active {
+  color: var(--color-primary-800);
+  text-decoration: underline;
+}

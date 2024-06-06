@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.4",
+    "sort-by": "^1.2.0"
+  }
+}
